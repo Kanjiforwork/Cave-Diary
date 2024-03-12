@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block head %}
+ <link href="static/parallax.css" rel="stylesheet">
+{% endblock %}
+{% block main %}
+<header>
+    <a href="" class="logo">Cave diary</a>
+    <ul>
+        <li><div>Hi, {{name}}</div></li>
+        <li><a href="/logout">Log out</a></li>
+    </ul>
+</header>
+<section>
+    <img src="static/stars.png" id="star" >
+    <img src="static/moon.png" id="moon" >
+    <img src="static/newmoun.png" id="moun" >
+    <img src="static/cave.png" id="cave">
+</section>
+<div class="sec">
+    <div class="out">
+    <div class="box">
+		<a class="button" href="#divOne">Write here</a>
+	</div>
+</div>
+	<div class="overlay" id="divOne">
+		<div class="wrapper">
+			<h2>HOW IS YOUR DAY?</h2><a class="close" href="#">&times;</a>
+			<div class="content">
+				<div class="container">
+					<form action="/" method="post">
+						<input name="topic" placeholder="What's a word to describe ur day?" type="text">
+						<label>Write here</label>
+						<textarea name="content" iplaceholder="Write something.."></textarea>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+    <br><br><br><br><br>
+
+<div id="title">
+</div>
+<div class="storage">
+    {% for i in range(rows| length) %}
+    <a class="link "href="#{{i}}">
+    <div class="layout">
+               <h1><a class="link" href="#{{i}}">{{rows[i].topic}}</a></h1>
+               <br>
+               <p class="content">{{rows[i].content}}</p>
+               <br>
+               <p>{{rows[i].time}}</p>
+               <br>
+
+    </div>
+            {% endfor %}
+   </div>
+</div>
+   {% for i in range(rows| length) %}
+   <div class="overlay2" id="{{i}}">
+     <div class="wrapper2">
+         <h2>HOW IS YOUR DAY?</h2><a class="close2" href="#">&times;</a>
+         <div class="content2">
+             <div class="container2">
+                 <form action="/" method="post">
+                     <!---<input name="topic2" placeholder="What's a word to describe ur day?" type="text">--->
+                     <div class="topic3">{{rows[i].topic}}</div>
+                     <label>Write here</label>
+                     <textarea readonly class="content3">{{rows[i].content}}</textarea>
+                 </form>
+             </div>
+         </div>
+     </div>
+ </div>
+ {% endfor %}
+
+
+
+
+
+
+<script>
+
+let star = document.getElementById("star");
+let moon = document.getElementById("moon");
+let moun = document.getElementById("moun");
+let cave = document.getElementById("cave");
+let btn = document.getElementById("btn");
+let header = document.querySelector("header");
+
+window.addEventListener("scroll", function()
+{
+    let value = window.scrollY;
+    star.style.left = value * 0.25 + "px";
+    moon.style.top = value * 1.05 + "px";
+    moun.style.top = value * 0.4 + "px";
+    cave.style.top = value * 0 + "px";
+    btn.style.marginTop = value * 4 + "px";
+    header.style.top = value * 0.5 + "px";
+})
+
+</script>
+
+{% endblock %}
