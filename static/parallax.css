@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    min-height: 100vh;
+    background: linear-gradient(#2b1055, #7597de);
+    scroll-behavior: smooth;
+
+}
+
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+header .logo
+{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+header ul li div
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+    background: #fff;
+    color: #2b1055;
+    size: auto;
+
+}
+
+header ul li a:hover
+{
+    background: #fff;
+    color: #2b1055;
+}
+
+section
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+section::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #000000, transparent);
+    z-index: 1000;
+
+}
+
+section img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#moon
+{
+    mix-blend-mode: screen;
+}
+
+.box
+{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 20px;
+    background: #fff;
+    color: black;
+    font-size: 2em;
+    top: 40px;
+    right: 50px;
+    z-index: 10;
+}
+
+
+.sec
+{
+    width: 100%;
+    height: auto;
+    min-height: 1
+    position: relative;
+    background: #000000;
+    z-index: 10000;
+    padding: 30px;
+}
+
+
+.box a {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+}
+
+.box a:hover{
+    text-decoration: none;
+    color: purple;
+    font-size: 40px;
+    transition: all 200ms;
+
+}
+
+.out {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.8);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+    z-index: 10000;
+}
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+.wrapper {
+	margin: 70px auto;
+	padding: 20px;
+	background: #041421;
+	border-radius: 5px;
+	width: 60%;
+    height: 500px;
+	position: relative;
+	transition: all 5s ease-in-out;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: white;
+    border-radius: 20px;
+}
+.wrapper h2 {
+	margin-top: 0;
+	color: white;
+    font-weight: bold;
+}
+.wrapper .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+.layout .delete {
+	position: absolute;
+    left: 80%;
+    transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: black;
+}
+.wrapper .close:hover {
+	color: #06D85F;
+}
+.wrapper .content {
+	max-height: 100%;
+    background: #041421;
+	overflow: auto;
+}
+/*form*/
+
+form label {
+	font-weight: 550;
+	letter-spacing: 3px;
+    color: white;
+    font-size: 17px;
+}
+input[type=text], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+    border-radius: 20px;
+}
+textarea {
+    height: 250px;
+}
+
+.topic3:read-only {
+	background: white;
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+    border-radius: 20px;
+    height: 40px;
+	color: black;
+}
+button {
+	background-color: white;
+	color: #041421;
+    font-weight: bold;
+	padding: 15px 50px;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+#title {
+    color: white;
+    z-index: 100;
+    position: absolute;
+    left: 45%;
+    font-size: 900;
+    background: black;
+    width: 100%;
+    right: 55%;
+}
+
+.layout {
+    background: white;
+    flex: 0 0 200px;
+    height: 160px auto;
+    border-radius: 20px;
+    width: 25%;
+    padding: 0px 8px 1px;
+    margin: 10px 10px 10px 10px;
+    overflow-wrap: break-word;
+}
+.layout .gap {
+    row-gap: 3rem;
+
+}
+
+.layout p
+{
+    color: black;
+    --max-lines: 3;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+    text-decoration: none;
+}
+.layout h1 a {
+    color: black;
+    text-decoration: none;
+}
+.layout h1 a:hover {
+    color: purple;
+    font-size: 44px;
+    text-decoration: none;
+    transition: all 200ms;
+}
+.storage {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto;
+    flex-wrap: wrap;
+    z-index: 10001;
+    background: black;
+}
+
+
+.overlay2 {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.8);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+    z-index: 10000;
+}
+.overlay2:target {
+	visibility: visible;
+	opacity: 1;
+}
+.wrapper2 {
+	margin: 70px auto;
+	padding: 20px;
+	background: #041421;
+	border-radius: 5px;
+	width: 60%;
+    height: 400px;
+	position: relative;
+	transition: all 5s ease-in-out;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: white;
+    border-radius: 20px;
+}
+.wrapper2 h2 {
+	margin-top: 0;
+	color: white;
+    font-weight: bold;
+}
+.wrapper2 .close2 {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+.wrapper2 .close2:hover {
+	color: #06D85F;
+}
+.wrapper2 . {
+	max-height: 100%;
+    background: #041421;
+	overflow: auto;
+}
